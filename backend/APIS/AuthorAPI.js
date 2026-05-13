@@ -3,7 +3,7 @@ export const authorRouter = exp.Router()
 
 import { register } from "../services/authservice.js"
 import { verifyToken } from "../Middlewares/verifyToken.js"
-import { checkAuthor } from "../middlewares/Checkauthor.js"
+import { checkAuthor } from "../Middlewares/Checkauthor.js"
 import ArticleModel from "../models/ArticalModel.js"
 
 // NEW IMPORTS (same as user router)
