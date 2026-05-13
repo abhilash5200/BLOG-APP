@@ -11,6 +11,8 @@ import { commonRouter } from "./APIS/CommonAPI.js";
 import cors from "cors";
 
 config(); //load .env variables
+console.log("PORT =", process.env.PORT);
+console.log("DB_URL =", process.env.DB_URL);
 
 //create express app
 const app = exp();
