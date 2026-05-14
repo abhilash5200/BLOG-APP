@@ -2,15 +2,27 @@ import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
+// ======================================================
+// COMMENT SCHEMA
+// ======================================================
+
 const userCommentSchema = new Schema({
+
   user: {
     type: Schema.Types.ObjectId,
     ref: "User"
   },
+
   comment: {
-    type: String
+    type: String,
+    trim: true
   }
+
 });
+
+// ======================================================
+// ARTICLE SCHEMA
+// ======================================================
 
 const articalSchema = new Schema({
 
@@ -22,17 +34,20 @@ const articalSchema = new Schema({
 
   title: {
     type: String,
-    required: [true, "title is required"]
+    required: [true, "title is required"],
+    trim: true
   },
 
   category: {
     type: String,
-    required: [true, "category is required"]
+    required: [true, "category is required"],
+    trim: true
   },
 
   content: {
     type: String,
-    required: [true, "content is required"]
+    required: [true, "content is required"],
+    trim: true
   },
 
   comments: [userCommentSchema],
@@ -48,4 +63,6 @@ const articalSchema = new Schema({
   versionKey: false
 });
 
-export default mongoose.models.Artical || mongoose.model("Artical", articalSchema);
+// safe export
+export default mongoose.models.Artical ||
+mongoose.model("Artical", articalSchema);

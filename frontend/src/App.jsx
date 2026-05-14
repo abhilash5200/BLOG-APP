@@ -1,18 +1,22 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import {
+  createBrowserRouter,
+  RouterProvider
+} from "react-router-dom";
 
-import RootLayout from "./components/RootLayout"
-import Home from "./components/Home"
-import Register from "./components/Register"
-import Login from "./components/Login"
+import RootLayout from "./components/RootLayout";
+import Home from "./components/Home";
+import Register from "./components/Register";
+import Login from "./components/Login";
 
-import UserDashboard from "./components/UserDashboard"
-import AuthorDashboard from "./components/AuthorDashboard"
-import AdminDashboard from "./components/AdminDashboard"
-import EditArticle from "./components/EditArticle"
-import ProtectedRoute from "./components/ProtectedRoute"
-import Errorboundary from "./components/ErrorBoundary"   
+import UserDashboard from "./components/UserDashboard";
+import AuthorDashboard from "./components/AuthorDashboard";
+import AdminDashboard from "./components/AdminDashboard";
+import EditArticle from "./components/EditArticle";
 
-import { Toaster } from "react-hot-toast"
+import ProtectedRoute from "./components/ProtectedRoute";
+import Errorboundary from "./components/ErrorBoundary";
+
+import { Toaster } from "react-hot-toast";
 
 function App() {
 
@@ -20,17 +24,30 @@ function App() {
     {
       path: "/",
       element: <RootLayout />,
-       errorElement: <Errorboundary />,   
+      errorElement: <Errorboundary />,
 
       children: [
 
-        { path: "", element: <Home /> },
+        // ================= HOME =================
 
-        { path: "register", element: <Register /> },
+        {
+          path: "",
+          element: <Home />
+        },
 
-        { path: "login", element: <Login /> },
+        // ================= AUTH =================
 
-        // ---------------- DASHBOARDS ----------------
+        {
+          path: "register",
+          element: <Register />
+        },
+
+        {
+          path: "login",
+          element: <Login />
+        },
+
+        // ================= USER =================
 
         {
           path: "user-profile",
@@ -41,6 +58,8 @@ function App() {
           )
         },
 
+        // ================= AUTHOR =================
+
         {
           path: "author-profile",
           element: (
@@ -49,6 +68,8 @@ function App() {
             </ProtectedRoute>
           )
         },
+
+        // ================= ADMIN =================
 
         {
           path: "admin-profile",
@@ -59,7 +80,7 @@ function App() {
           )
         },
 
-        // ---------- AUTHOR ONLY ----------
+        // ================= EDIT ARTICLE =================
 
         {
           path: "edit-article/:id",
@@ -72,14 +93,27 @@ function App() {
 
       ]
     }
-  ])
+  ]);
 
   return (
     <>
-      <Toaster position="top-center" reverseOrder={false} />
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: "#111827",
+            color: "#fff",
+            borderRadius: "12px",
+            padding: "14px"
+          }
+        }}
+      />
+
       <RouterProvider router={routerObj} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

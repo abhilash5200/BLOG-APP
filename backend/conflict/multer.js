@@ -1,4 +1,4 @@
-import multer from "multer"
+import multer from "multer";
 
 export const upload = multer({
 
@@ -14,11 +14,10 @@ export const upload = multer({
       file.mimetype === "image/jpeg" ||
       file.mimetype === "image/png"
     ) {
-      cb(null, true)
+      cb(null, true);
+
     } else {
-      cb(new Error("Only JPG and PNG allowed"), false)
+      cb(new Error("Only JPG and PNG allowed"), false);
     }
-
   }
-
-})
+});

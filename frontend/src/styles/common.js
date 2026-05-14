@@ -1,72 +1,136 @@
-// src/styles/common.js
-// Theme: Apple Light — white/f5f5f7 background, #1d1d1f text, #0066cc accent
-// Inspired by apple.com — no gradients, no shadows, pure typography & spacing
+// ======================================================
+// MODERN PROFESSIONAL THEME
+// ======================================================
 
-// ─── Layout ───────────────────────────────────────────
-export const pageBackground = "bg-white min-h-screen"
-export const pageWrapper    = "max-w-5xl mx-auto px-6 py-16"
-export const section        = "mb-14"
+// ================= LAYOUT =================
 
-// ─── Cards ────────────────────────────────────────────
-export const cardClass      = "bg-[#f5f5f7] rounded-2xl p-7 hover:bg-[#ebebf0] transition-colors duration-200 cursor-pointer"
+export const pageBackground =
+  "min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50 relative overflow-hidden";
 
-// ─── Typography ───────────────────────────────────────
-export const pageTitleClass = "text-5xl font-bold text-[#1d1d1f] tracking-tight leading-none mb-2"
-export const headingClass   = "text-2xl font-bold text-[#1d1d1f] tracking-tight"
-export const subHeadingClass= "text-lg font-semibold text-[#1d1d1f] tracking-tight"
-export const bodyText       = "text-[#6e6e73] leading-relaxed"
-export const mutedText      = "text-sm text-[#a1a1a6]"
-export const linkClass      = "text-[#0066cc] hover:text-[#004499] transition-colors"
+export const pageWrapper =
+  "max-w-7xl mx-auto px-6 py-16";
 
-// ─── Buttons ──────────────────────────────────────────
-export const primaryBtn     = "bg-[#0066cc] text-white font-semibold px-5 py-2 rounded-full hover:bg-[#004499] transition-colors cursor-pointer text-sm tracking-tight"
-export const secondaryBtn   = "border border-[#d2d2d7] text-[#1d1d1f] font-medium px-5 py-2 rounded-full hover:bg-[#f5f5f7] transition-colors cursor-pointer text-sm"
-export const ghostBtn       = "text-[#0066cc] font-medium hover:text-[#004499] transition-colors cursor-pointer text-sm"
+export const section =
+  "mb-16";
 
-// ─── Forms ────────────────────────────────────────────
-export const formCard       = "bg-[#f5f5f7] rounded-2xl p-10 max-w-md mx-auto"
-export const formTitle      = "text-2xl font-bold text-[#1d1d1f] tracking-tight text-center mb-7"
-export const labelClass     = "text-xs font-medium text-[#6e6e73] mb-1.5 block"
-export const inputClass     = "w-full bg-white border border-[#d2d2d7] rounded-xl px-4 py-2.5 text-[#1d1d1f] text-sm placeholder:text-[#a1a1a6] focus:outline-none focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/10 transition"
-export const formGroup      = "mb-4"
-export const submitBtn      = "w-full bg-[#0066cc] text-white font-semibold py-2.5 rounded-full hover:bg-[#004499] transition-colors cursor-pointer mt-2 text-sm tracking-tight"
+// ================= CARDS =================
 
-// ─── Navbar ───────────────────────────────────────────
-export const navbarClass        = "bg-white/85 backdrop-blur-xl backdrop-saturate-150 border-b border-[#e8e8ed] px-8 h-[52px] flex items-center sticky top-0 z-50"
-export const navContainerClass  = "max-w-5xl mx-auto w-full flex items-center justify-between"
-export const navBrandClass      = "text-base font-semibold text-[#1d1d1f] tracking-tight"
-export const navLinksClass      = "flex items-center gap-7"
-export const navLinkClass       = "text-[0.8rem] text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-normal"
-export const navLinkActiveClass = "text-[0.8rem] text-[#0066cc] font-medium"
-
-// ─── Article / Blog ───────────────────────────────────
-export const articleGrid        = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#e8e8ed] border border-[#e8e8ed] rounded-2xl overflow-hidden"
-export const articleCardClass   = "bg-[#f5f5f7] p-7 hover:bg-[#ebebf0] transition-colors duration-200 flex flex-col gap-2.5 cursor-pointer"
-export const articleTitle       = "text-base font-semibold text-[#1d1d1f] leading-snug tracking-tight"
-export const articleExcerpt     = "text-sm text-[#6e6e73] leading-relaxed"
-export const articleMeta        = "text-xs text-[#a1a1a6]"
-export const articleBody        = "text-[#6e6e73] leading-[1.85] text-[0.95rem] max-w-2xl"
-export const timestampClass     = "text-xs text-[#a1a1a6] flex items-center gap-1.5"
-export const tagClass           = "text-[0.65rem] font-semibold text-[#0066cc] uppercase tracking-widest w-fit"
-
-// ─── Feedback ─────────────────────────────────────────
-export const errorClass         = "bg-[#ff3b30]/[0.06] text-[#cc2f26] border border-[#ff3b30]/[0.18] rounded-xl px-4 py-3 text-sm"
-export const successClass       = "bg-[#34c759]/[0.07] text-[#248a3d] border border-[#34c759]/20 rounded-xl px-4 py-3 text-sm"
-export const loadingClass       = "text-[#0066cc]/60 text-sm animate-pulse text-center py-10"
-export const emptyStateClass    = "text-center text-[#a1a1a6] py-16 text-sm"
-
-// ─── Divider ──────────────────────────────────────────
-export const divider            = "border-t border-[#e8e8ed] my-10"
+export const cardClass =
+  "bg-white/80 backdrop-blur-xl border border-white/40 rounded-3xl p-7 shadow-lg hover:shadow-2xl transition-all duration-300";
 
 
+// ================= TYPOGRAPHY =================
 
+export const pageTitleClass =
+  "text-5xl md:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight";
 
+export const headingClass =
+  "text-3xl font-bold text-gray-900 tracking-tight";
 
+export const subHeadingClass =
+  "text-xl font-semibold text-gray-800 tracking-tight";
 
+export const bodyText =
+  "text-gray-600 leading-8";
 
+export const mutedText =
+  "text-sm text-gray-400";
 
+export const linkClass =
+  "text-blue-600 hover:text-cyan-500 transition cursor-pointer";
 
+// ================= BUTTONS =================
 
-//fetch
-//get
+export const primaryBtn =
+  "bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold px-6 py-3 rounded-2xl hover:scale-[1.02] transition shadow-lg cursor-pointer";
 
+export const secondaryBtn =
+  "bg-white border border-gray-200 text-gray-800 font-medium px-6 py-3 rounded-2xl hover:bg-gray-100 transition shadow-sm cursor-pointer";
+
+export const ghostBtn =
+  "text-blue-600 font-medium hover:text-cyan-500 transition cursor-pointer";
+
+// ================= FORMS =================
+
+export const formCard =
+  "bg-white/85 backdrop-blur-xl border border-white/40 rounded-3xl p-10 max-w-lg mx-auto shadow-2xl";
+
+export const formTitle =
+  "text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight text-center";
+
+export const labelClass =
+  "text-sm font-semibold text-gray-700 mb-2 block";
+
+export const inputClass =
+  "w-full bg-white border border-gray-200 rounded-2xl px-5 py-3 text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition";
+
+export const formGroup =
+  "mb-5";
+
+export const submitBtn =
+  "w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold py-3 rounded-2xl hover:scale-[1.02] transition shadow-xl cursor-pointer mt-2";
+
+// ================= NAVBAR =================
+
+export const navbarClass =
+  "sticky top-0 z-50 backdrop-blur-xl bg-white/80 border-b border-gray-200 shadow-sm";
+
+export const navContainerClass =
+  "max-w-7xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between";
+
+export const navBrandClass =
+  "text-2xl font-extrabold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent";
+
+export const navLinksClass =
+  "flex items-center gap-5";
+
+export const navLinkClass =
+  "text-gray-600 hover:text-blue-600 transition font-medium px-4 py-2 rounded-xl";
+
+export const navLinkActiveClass =
+  "bg-blue-600 text-white shadow-md px-4 py-2 rounded-xl";
+
+// ================= ARTICLE / BLOG =================
+
+export const articleGrid =
+  "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8";
+
+export const articleCardClass =
+  "bg-white rounded-3xl p-7 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 flex flex-col gap-4";
+
+export const articleTitle =
+  "text-2xl font-bold text-gray-900 leading-snug";
+
+export const articleExcerpt =
+  "text-gray-600 leading-7";
+
+export const articleMeta =
+  "text-sm text-gray-400";
+
+export const articleBody =
+  "text-gray-700 leading-9 text-[1rem]";
+
+export const timestampClass =
+  "text-sm text-gray-400 flex items-center gap-2";
+
+export const tagClass =
+  "text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full w-fit";
+
+// ================= FEEDBACK =================
+
+export const errorClass =
+  "bg-red-50 text-red-500 border border-red-200 rounded-2xl px-4 py-3 text-sm";
+
+export const successClass =
+  "bg-green-50 text-green-600 border border-green-200 rounded-2xl px-4 py-3 text-sm";
+
+export const loadingClass =
+  "text-blue-500 text-sm animate-pulse text-center py-10";
+
+export const emptyStateClass =
+  "text-center text-gray-400 py-16 text-sm";
+
+// ================= DIVIDER =================
+
+export const divider =
+  "border-t border-gray-200 my-12";

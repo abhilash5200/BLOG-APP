@@ -2,6 +2,8 @@ import { create } from "zustand";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export const useAuth = create((set) => ({
 
   currentUser: null,
@@ -9,7 +11,8 @@ export const useAuth = create((set) => ({
   isAuthenticated: false,
   error: null,
 
-  // ---------------- CHECK AUTH ON REFRESH ----------------
+  // ================= CHECK AUTH =================
+
   checkAuth: async () => {
 
     try {
@@ -17,8 +20,10 @@ export const useAuth = create((set) => ({
       set({ loading: true });
 
       const res = await axios.get(
-        "https://blog-app-3-lhml.onrender.com/common-api/check-auth",
-        { withCredentials: true }
+        `${API_URL}/common-api/check-auth`,
+        {
+          withCredentials: true
+        }
       );
 
       set({
@@ -36,12 +41,11 @@ export const useAuth = create((set) => ({
         loading: false,
         error: null
       });
-
     }
-
   },
 
-  // ---------------- LOGIN ----------------
+  // ================= LOGIN =================
+
   login: async (userCredWithRole) => {
 
     const { role, ...userCred } = userCredWithRole;
@@ -54,17 +58,23 @@ export const useAuth = create((set) => ({
       });
 
       const res = await axios.post(
-        "https://blog-app-3-lhml.onrender.com/common-api/login",
+        `${API_URL}/common-api/login`,
         userCred,
-        { withCredentials: true }
+        {
+          withCredentials: true
+        }
       );
 
       const user = res.data.payload;
 
       // role validation
-      if (user.role.toLowerCase() !== role.toLowerCase()) {
+      if (
+        user.role.toLowerCase() !== role.toLowerCase()
+      ) {
 
-        toast.error("Selected role does not match your account");
+        toast.error(
+          "Selected role does not match your account"
+        );
 
         set({
           loading: false,
@@ -83,7 +93,7 @@ export const useAuth = create((set) => ({
         error: null
       });
 
-      toast.success("Login successful");
+      toast.success("Login successful 🎉");
 
       return {
         success: true,
@@ -93,7 +103,8 @@ export const useAuth = create((set) => ({
     } catch (err) {
 
       const message =
-        err.response?.data?.message || "Login failed";
+        err.response?.data?.message ||
+        "Login failed";
 
       toast.error(message);
 
@@ -105,20 +116,21 @@ export const useAuth = create((set) => ({
       });
 
       return { success: false };
-
     }
-
   },
 
-  // ---------------- LOGOUT ----------------
+  // ================= LOGOUT =================
+
   logout: async () => {
 
     try {
 
       await axios.post(
-       "https://blog-app-3-lhml.onrender.com/common-api/logout",
+        `${API_URL}/common-api/logout`,
         {},
-        { withCredentials: true }
+        {
+          withCredentials: true
+        }
       );
 
       set({
@@ -128,7 +140,7 @@ export const useAuth = create((set) => ({
         error: null
       });
 
-      toast.success("Logged out successfully");
+      toast.success("Logged out successfully 👋");
 
       return { success: true };
 
@@ -137,9 +149,7 @@ export const useAuth = create((set) => ({
       toast.error("Logout failed");
 
       return { success: false };
-
     }
-
   }
 
 }));

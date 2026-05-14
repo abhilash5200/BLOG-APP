@@ -2,17 +2,21 @@ import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
-//USER SCHEMA 
+// ======================================================
+// USER SCHEMA
+// ======================================================
 
 const userSchema = new Schema({
 
   firstName: {
     type: String,
-    required: [true, "first name is required"]
+    required: [true, "first name is required"],
+    trim: true
   },
 
   lastName: {
-    type: String
+    type: String,
+    trim: true
   },
 
   email: {
@@ -50,5 +54,6 @@ const userSchema = new Schema({
   versionKey: false
 });
 
-//safe export (prevents OverwriteModelError)
-export default mongoose.models.User || mongoose.model("User", userSchema);
+// safe export
+export default mongoose.models.User ||
+mongoose.model("User", userSchema);
