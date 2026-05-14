@@ -28,7 +28,7 @@ function ArticleByID(){
     try{
 
       const res = await axios.get(
-        `http://localhost:4000/user-api/articles/${id}`,
+        `https://blog-app-3-lhml.onrender.com/user-api/articles/${id}`,
         {withCredentials:true}
       )
 

@@ -45,7 +45,7 @@ function AuthorDashboard(){
     try{
 
       const res = await axios.get(
-        `http://localhost:4000/author-api/articles/${currentUser._id}`,
+        `https://blog-app-3-lhml.onrender.com/author-api/articles/${currentUser._id}`,
         {withCredentials:true}
       )
 
@@ -67,7 +67,7 @@ function AuthorDashboard(){
 
         try{
           const userRes = await axios.get(
-            `http://localhost:4000/common-api/users/${id}`,
+            `https://blog-app-3-lhml.onrender.com/common-api/users/${id}`,
             {withCredentials:true}
           )
 
@@ -113,7 +113,7 @@ function AuthorDashboard(){
       }
 
       await axios.post(
-        "http://localhost:4000/author-api/articles",
+        "https://blog-app-3-lhml.onrender.com/author-api/articles",
         articleData,
         {withCredentials:true}
       )
@@ -140,7 +140,7 @@ function AuthorDashboard(){
   const deleteArticle = async (id)=>{
     try{
       await axios.patch(
-        `http://localhost:4000/author-api/articles/${id}/status`,
+        `https://blog-app-3-lhml.onrender.com/author-api/articles/${id}/status`,
         { isArticleActive:false },
         { withCredentials:true }
       )
@@ -160,7 +160,7 @@ function AuthorDashboard(){
   const restoreArticle = async (id)=>{
     try{
       await axios.patch(
-        `http://localhost:4000/author-api/articles/${id}/status`,
+        `https://blog-app-3-lhml.onrender.com/author-api/articles/${id}/status`,
         { isArticleActive:true },
         { withCredentials:true }
       )

@@ -25,7 +25,7 @@ function EditArticle(){
     try{
 
       await axios.put(
-        "http://localhost:4000/author-api/articles",
+        "https://blog-app-3-lhml.onrender.com/author-api/articles",
         {
           articleId: article._id,
           title: data.title,
