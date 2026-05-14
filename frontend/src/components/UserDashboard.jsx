@@ -31,7 +31,7 @@ function UserDashboard(){
     try{
 
       const res = await axios.get(
-        "http://localhost:4000/user-api/articles",
+        "https://blog-app-3-lhml.onrender.com/user-api/articles",
         {withCredentials:true}
       )
 
@@ -59,7 +59,7 @@ function UserDashboard(){
     try{
 
       const res = await axios.put(
-        `http://localhost:4000/user-api/comment/${selectedArticle._id}`,
+        `https://blog-app-3-lhml.onrender.com/user-api/comment/${selectedArticle._id}`,
         { comment: commentText },
         { withCredentials:true }
       )

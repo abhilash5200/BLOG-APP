@@ -55,11 +55,11 @@ function Register() {
       let url=""
 
       if(role==="user"){
-        url="http://localhost:4000/user-api/users"
+        url="https://blog-app-3-lhml.onrender.com/user-api/users"
       }
 
       if(role==="author"){
-        url="http://localhost:4000/author-api/users"
+        url="https://blog-app-3-lhml.onrender.com/author-api/users"
       }
 
       const resObj = await axios.post(url,formData,{
