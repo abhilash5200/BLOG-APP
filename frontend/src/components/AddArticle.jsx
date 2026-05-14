@@ -1,11 +1,31 @@
 import { useForm } from 'react-hook-form'
+import axios from "axios"
 
-function AddArticle() {
-  const { register, handleSubmit, formState: { errors } } = useForm()
+const onSubmit = async (formObj) => {
 
-  const onSubmit = (formObj) => {
-    console.log(formObj)
+  try {
+
+    let res = await axios.post(
+      "https://blog-app-3-lhml.onrender.com/author-api/articles",
+      formObj,
+      {
+        withCredentials: true
+      }
+    )
+
+    console.log(res.data)
+
+    alert("Article created successfully")
+
+  } catch (err) {
+
+    console.log(err)
+
+    alert("Failed to create article")
+
   }
+
+
   return (
     <div>
       <div className='min-h-screen flex flex-col items-center justify-center'>
