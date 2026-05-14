@@ -14,12 +14,10 @@ config();
 const app = exp();
 
 // ================= CORS =================
-app.use(
-  cors({
-    origin: "https://blog-app-sepia-omega-97.vercel.app",
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: process.env.FRONTEND_URL,
+  credentials: true
+}));
 
 // ================= MIDDLEWARES =================
 app.use(exp.json());
