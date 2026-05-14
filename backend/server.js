@@ -15,10 +15,12 @@ const app = exp();
 
 // ================= CORS =================
 app.use(cors({
-  origin: process.env.FRONTEND_URL,
+  origin: [
+    "https://blog-app-sepia-omega-97.vercel.app",
+    "https://blog-1gl1tcajp-abhilash5200s-projects.vercel.app"
+  ],
   credentials: true
 }));
-
 // ================= MIDDLEWARES =================
 app.use(exp.json());
 app.use(cookieParser());
