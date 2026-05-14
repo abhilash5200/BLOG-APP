@@ -15,10 +15,7 @@ const app = exp();
 
 // ================= CORS =================
 app.use(cors({
-  origin: [
-    "https://blog-app-sepia-omega-97.vercel.app",
-    "https://blog-1gl1tcajp-abhilash5200s-projects.vercel.app"
-  ],
+  origin: process.env.FRONTEND_URL,
   credentials: true
 }));
 
