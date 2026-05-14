@@ -19,7 +19,7 @@ const app = exp();
 
 //cors middleware
 app.use(cors({
-  origin: "http://localhost:5174",
+  origin: "https://blog-app-sepia-omega-97.vercel.app",
   credentials: true
 }));
 
