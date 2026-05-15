@@ -40,7 +40,9 @@ function UserDashboard() {
       toast.error("Failed to load articles");
 
     } finally {
+
       setLoading(false);
+
     }
   };
 
@@ -164,6 +166,7 @@ function UserDashboard() {
           >
 
             {/* IMAGE */}
+
             <img
               src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
               alt="article"
@@ -171,6 +174,7 @@ function UserDashboard() {
             />
 
             {/* CONTENT */}
+
             <div className="p-6">
 
               <div className="flex items-center gap-3 mb-4">
@@ -233,6 +237,7 @@ function UserDashboard() {
           <div className="max-w-4xl mx-auto mt-10 bg-white rounded-3xl shadow-2xl overflow-hidden">
 
             {/* HERO IMAGE */}
+
             <img
               src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1200&auto=format&fit=crop"
               alt="article"
@@ -242,6 +247,7 @@ function UserDashboard() {
             <div className="p-8">
 
               {/* TITLE */}
+
               <h2 className="text-4xl font-extrabold text-gray-900 leading-tight">
 
                 {selectedArticle.title}
@@ -249,6 +255,7 @@ function UserDashboard() {
               </h2>
 
               {/* AUTHOR */}
+
               <div className="flex items-center gap-4 mt-6">
 
                 <img
@@ -263,11 +270,15 @@ function UserDashboard() {
                 <div>
 
                   <p className="font-semibold text-gray-800 text-lg">
+
                     {selectedArticle.author?.firstName}
+
                   </p>
 
                   <p className="text-gray-400">
+
                     {selectedArticle.category}
+
                   </p>
 
                 </div>
@@ -275,6 +286,7 @@ function UserDashboard() {
               </div>
 
               {/* CONTENT */}
+
               <p className="mt-8 text-gray-700 leading-9 text-lg">
 
                 {selectedArticle.content}
@@ -282,6 +294,7 @@ function UserDashboard() {
               </p>
 
               {/* COMMENTS */}
+
               <div className="mt-12">
 
                 <h3 className="text-3xl font-bold text-gray-900 mb-6">
@@ -305,10 +318,12 @@ function UserDashboard() {
 
                     <div
                       key={index}
-                      className="bg-gray-50 rounded-2xl p-5 border border-gray-100"
+                      className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition"
                     >
 
-                      <div className="flex items-center gap-3 mb-3">
+                      {/* USER INFO */}
+
+                      <div className="flex items-center gap-4 mb-4">
 
                         <img
                           src={
@@ -316,18 +331,31 @@ function UserDashboard() {
                             `https://ui-avatars.com/api/?name=${c.user?.firstName}`
                           }
                           alt="user"
-                          className="w-11 h-11 rounded-full object-cover border"
+                          className="w-12 h-12 rounded-full object-cover border"
                         />
 
-                        <p className="font-semibold text-gray-800">
+                        <div>
 
-                          {c.user?.firstName}
+                          <p className="font-bold text-gray-900 text-lg">
 
-                        </p>
+                            {c.user?.firstName}{" "}
+                            {c.user?.lastName}
+
+                          </p>
+
+                          <p className="text-xs text-gray-400">
+
+                            Community Member ✨
+
+                          </p>
+
+                        </div>
 
                       </div>
 
-                      <p className="text-gray-600 leading-7">
+                      {/* COMMENT */}
+
+                      <p className="text-gray-700 leading-8 text-[15px]">
 
                         {c.comment}
 
@@ -339,6 +367,7 @@ function UserDashboard() {
                 </div>
 
                 {/* COMMENT BOX */}
+
                 <div className="mt-8">
 
                   <textarea
@@ -361,6 +390,7 @@ function UserDashboard() {
                 </div>
 
                 {/* CLOSE */}
+
                 <button
                   className="mt-8 text-red-500 hover:text-red-600 font-semibold"
                   onClick={() =>

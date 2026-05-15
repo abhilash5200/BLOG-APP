@@ -466,7 +466,7 @@ function AuthorDashboard() {
 
               <div className="mt-12">
 
-                <h3 className="text-3xl font-bold mb-6">
+                <h3 className="text-3xl font-bold mb-6 text-gray-900">
 
                   Comments 💬
 
@@ -476,7 +476,7 @@ function AuthorDashboard() {
 
                   <div className="bg-gray-50 rounded-2xl p-6 text-center text-gray-500">
 
-                    No comments yet
+                    No comments yet ✨
 
                   </div>
                 )}
@@ -488,17 +488,44 @@ function AuthorDashboard() {
 
                       <div
                         key={index}
-                        className="bg-gray-50 rounded-2xl p-5 border border-gray-100"
+                        className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition"
                       >
 
-                        <p className="font-semibold text-gray-800">
+                        {/* USER INFO */}
 
-                          {c.user?.firstName}{" "}
-                          {c.user?.lastName}
+                        <div className="flex items-center gap-4 mb-4">
 
-                        </p>
+                          <img
+                            src={
+                              c.user?.profileImageUrl ||
+                              `https://ui-avatars.com/api/?name=${c.user?.firstName}`
+                            }
+                            alt="user"
+                            className="w-12 h-12 rounded-full object-cover border"
+                          />
 
-                        <p className="mt-2 text-gray-600 leading-7">
+                          <div>
+
+                            <h3 className="font-bold text-gray-900 text-lg">
+
+                              {c.user?.firstName}{" "}
+                              {c.user?.lastName}
+
+                            </h3>
+
+                            <p className="text-xs text-gray-400">
+
+                              Reader ✨
+
+                            </p>
+
+                          </div>
+
+                        </div>
+
+                        {/* COMMENT */}
+
+                        <p className="text-gray-700 leading-8 text-[15px]">
 
                           {c.comment}
 

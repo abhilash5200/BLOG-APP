@@ -98,7 +98,17 @@ authorRouter.get(
 
       const articles = await ArticleModel.find({
         author: aid
-      }).populate("author", "firstName email");
+      })
+
+      .populate(
+        "author",
+        "firstName lastName email profileImageUrl"
+      )
+
+      .populate(
+        "comments.user",
+        "firstName lastName profileImageUrl email"
+      );
 
       res.status(200).json({
         message: "articles",
@@ -106,7 +116,9 @@ authorRouter.get(
       });
 
     } catch (err) {
+
       next(err);
+
     }
   }
 );
